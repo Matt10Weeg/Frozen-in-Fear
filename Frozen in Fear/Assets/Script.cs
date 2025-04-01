@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Script : MonoBehaviour
 {
-    [SerializeField] private string newGameLevel = "Scene 2";
+    [SerializeField] private string newGameLevel = "Scene 1";
     
     public void NewGameButton()
     {

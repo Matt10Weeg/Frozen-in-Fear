@@ -7,7 +7,7 @@ public class ScenLoader : MonoBehaviour
 {
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("Scene 0");
+        SceneManager.LoadScene("Scene");
         // Replace with your scene
     }
 }
