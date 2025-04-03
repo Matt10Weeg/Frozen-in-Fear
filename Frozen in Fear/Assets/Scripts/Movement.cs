@@ -6,28 +6,28 @@ using UnityEngine;
 
 public class PlayerMovement3D : MonoBehaviour
 {
-    public float speed = 6f;          // Movement speed of the player
-    public float turnSpeed = 100f;    // Speed of rotation
-    private Rigidbody rb;             // Reference to the Rigidbody component
+    public float speed = 6f;          // Bewegings snelheid van de speler
+    public float turnSpeed = 100f;    // Snelheid van de rotatie
+    private Rigidbody rb;             // Referentie naar de Rigidbody component
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); // Get the Rigidbody component on the player
+        rb = GetComponent<Rigidbody>(); // Krijg de Rigidbody component van de speler
     }
 
     void FixedUpdate()
     {
-        // Get input from the player
+        // Krijg de input van de speler
         float moveHorizontal = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right arrows
         float moveVertical = Input.GetAxisRaw("Vertical");     // W/S or Up/Down arrows
 
-        // Calculate movement direction relative to the player's forward direction
+        // Bereken beweging directie gerelateerd naar de speler's voorwaardse directie
         Vector3 movement = (transform.forward * moveVertical + transform.right * moveHorizontal).normalized * speed;
 
-        // Apply movement to the Rigidbody
+        // Pas movement toe op de Rigidbody
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
 
-        // Handle rotation (optional, based on horizontal input)
+        // B rotatie (optioneel, op basis van horizontale invoer)
         float rotation = moveHorizontal * turnSpeed * Time.fixedDeltaTime;
         Quaternion turn = Quaternion.Euler(0f, rotation, 0f);
         rb.MoveRotation(rb.rotation * turn);
