@@ -18,8 +18,8 @@ public class PlayerMovement3D : MonoBehaviour
     void FixedUpdate()
     {
         // Krijg de input van de speler
-        float moveHorizontal = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right arrows
-        float moveVertical = Input.GetAxisRaw("Vertical");     // W/S or Up/Down arrows
+        float moveHorizontal = Input.GetAxisRaw("Horizontal"); // A/D of Links/Rechts pijltjes
+        float moveVertical = Input.GetAxisRaw("Vertical");     // W/S of Omhoog/Naar beneden pijltjes 
 
         // Bereken beweging directie gerelateerd naar de speler's voorwaardse directie
         Vector3 movement = (transform.forward * moveVertical + transform.right * moveHorizontal).normalized * speed;
